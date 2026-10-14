@@ -1,0 +1,24 @@
+{
+  "name": "nav-mesh",
+  "version": "1.0.0",
+  "description": "A navigation mesh demo using Phaser",
+  "keywords": [
+    "nav-mesh"
+  ],
+  "homepage": "https://github.com/sarah-j-smith/nav-mesh-phaser#readme",
+  "bugs": {
+    "url": "https://github.com/sarah-j-smith/nav-mesh-phaser/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarah-j-smith/nav-mesh-phaser.git"
+  },
+  "license": "MIT",
+  "author": "sarah@storybridge.org",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "node --test",
+    "start": "npx live-server"
+  }
+}

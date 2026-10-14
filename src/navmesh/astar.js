@@ -2,9 +2,9 @@
 // http://github.com/bgrins/javascript-astar
 // Freely distributable under the MIT License.
 // Implements the astar search algorithm in javascript using a Binary Heap.
-// Includes Binary Heap (with modifications) from Marijn Haverbeke.
-// http://eloquentjavascript.net/appendix2.html
 // Modified a bit by sez@storybridge.org
+
+import { BinaryHeap } from './binaryheap.js';
 
 function pathTo(node) {
   let curr = node;
@@ -31,13 +31,12 @@ export class Astar {
    * @param {Object} [options]
    * @param {boolean} [options.closest] Specifies whether to return the
    path to the closest node if the target is unreachable.
-   * @param {Function} [options.heuristic] Heuristic function (see
-   *          astar.heuristics).
+   * @param {Heuristic} [options.heuristic] Heuristic function (see astar.heuristics).
    */
   search(graph, start, end, options) {
     graph.cleanDirty();
     options = options || {};
-    const heuristic = options.heuristic || astar.heuristics.manhattan;
+    const heuristic = options.heuristic || Astar.heuristics.manhattan;
     const closest = options.closest || false;
 
     const openHeap = getHeap();
@@ -111,6 +110,10 @@ export class Astar {
     return [];
   }
 
+  /**
+   * Reset a node to a blank state.
+   * @param node
+   */
   static cleanNode(node) {
     node.f = 0;
     node.g = 0;
@@ -120,8 +123,19 @@ export class Astar {
     node.parent = null;
   }
 
+  /**
+   * @callback Heuristic
+   * @param {module:Astar.PointLike} sourcePoint to find heuristic cost _from_
+   * @param {module:Astar.PointLike} goalPoint to find heuristic cost _to_
+   * @returns{number} the heuristic of the cost to move from sourcePoint to goalPoint
+   */
+
   // See list of heuristics: http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html
-  heuristics = {
+  /**
+   * Dictionary of heuristics
+   * @type {{manhattan: Heuristic, diagonal: Heuristic}}
+   */
+  static heuristics = {
     manhattan(pos0, pos1) {
       const d1 = Math.abs(pos1.x - pos0.x);
       const d2 = Math.abs(pos1.y - pos0.y);

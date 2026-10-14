@@ -77,10 +77,14 @@ export function areCollinear(line1, line2, errorMargin = 0.0001) {
   // by their points
   const area1 = triarea2(line1.start, line1.end, line2.start);
   const area2 = triarea2(line1.start, line1.end, line2.end);
-  if (almostEqual(area1, 0, errorMargin) && almostEqual(area2, 0, errorMargin)) {
-    return true;
-  } else return false;
+  return almostEqual(area1, 0, errorMargin) && almostEqual(area2, 0, errorMargin);
 }
+
+/**
+ * Try to cast the argument to a Boolean and return its truth value.
+ * @param input argument to cast
+ * @returns {boolean} true if the cast value was truthy, and false otherwise
+ */
 export function isTruthy(input) {
   return Boolean(input);
 }

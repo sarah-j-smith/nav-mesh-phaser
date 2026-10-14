@@ -5,13 +5,14 @@ import { angleDifference, areCollinear, projectPointToEdge } from './utils.js';
 import Vector2 from './math/vector-2.js';
 import Line from './math/line.js';
 import Polygon from './math/polygon.js';
+import { Astar } from './astar.js';
 
 /**
  * The `NavMesh` class is the workhorse that represents a navigation mesh built from a series of
  * polygons. Once built, the mesh can be asked for a path from one point to another point. Some
  * internal terminology usage:
  * - neighbor: a polygon that shares part of an edge with another polygon
- * - portal: when two neighbor's have edges that overlap, the portal is the overlapping line segment
+ * - portal: when two neighbors have edges that overlap, the portal is the overlapping line segment
  * - channel: the path of polygons from starting point to end point
  * - pull the string: run the funnel algorithm on the channel so that the path hugs the edges of the
  *   channel. Equivalent to having a string snaking through a hallway and then pulling it taut.
@@ -56,16 +57,21 @@ export default class NavMesh {
   isPointInMesh(point) {
     return this.navPolygons.some((navPoly) => navPoly.contains(point));
   }
+
+  /**
+   * @typedef {Object} ClosestMeshPointResult
+   * @property {number} distance from the given point to the mesh
+   * @property {NavMesh.Polygon|null|undefined} polygon the one the point is closest to, or null
+   * @property {NavMesh.Vector2|null|undefined} point the point inside the mesh, or null
+   */
+
   /**
    * Find the closest point in the mesh to the given point. If the point is already in the mesh,
-   * this will give you that point. If the point is outside of the mesh, this will attempt to
-   * project this point into the mesh (up to the given maxAllowableDist). This returns an object
-   * with:
-   * - distance - from the given point to the mesh
-   * - polygon - the one the point is closest to, or null
-   * - point - the point inside the mesh, or null
-   * @param point
-   * @param maxAllowableDist
+   * this will give you that point. If the point is outside the mesh, this will attempt to
+   * project this point into the mesh (up to the given maxAllowableDist).
+   * @return {ClosestMeshPointResult} result
+   * @param {NavMesh.Vector2} point
+   * @param {number} maxAllowableDist - defaults to positive infinity
    */
   findClosestMeshPoint(point, maxAllowableDist = Number.POSITIVE_INFINITY) {
     let minDistance = maxAllowableDist;
@@ -109,6 +115,7 @@ export default class NavMesh {
     let d, r;
     const startVector = new Vector2(startPoint.x, startPoint.y);
     const endVector = new Vector2(endPoint.x, endPoint.y);
+    const astar = new Astar();
     // Find the closest poly for the starting and ending point
     for (const navPoly of this.navPolygons) {
       r = navPoly.boundingRadius;
@@ -165,12 +172,12 @@ export default class NavMesh {
     // If the start and end polygons are the same, return a direct path
     if (startPoly === endPoly) return [startVector, endVector];
     // Search!
-    const astarPath = jsastar.astar.search(this.graph, startPoly, endPoly, {
+    const astarPath = astar.search(this.graph, startPoly, endPoly, {
       heuristic: this.graph.navHeuristic,
     });
     // While the start and end polygons may be valid, no path between them
     if (astarPath.length === 0) return null;
-    // jsastar drops the first point from the path, but the funnel algorithm needs it
+    // Astar drops the first point from the path, but the funnel algorithm needs it
     astarPath.unshift(startPoly);
     // We have a path, so now time for the funnel algorithm
     const channel = new Channel();

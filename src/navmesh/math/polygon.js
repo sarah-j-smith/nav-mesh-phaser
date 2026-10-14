@@ -1,12 +1,29 @@
 import Line from './line.js';
+
 /**
- * Stripped down version of Phaser's Polygon with just the functionality needed for navmeshes.
+ *  @namespace NavMesh
+ */
+
+/**
+ * @memberOf NavMesh
+ * @typedef {Object} PointLike
+ * @property {number} x x-coordinate
+ * @property {number} y y-coordinate
+ */
+
+/**
+ * A defined set of line segments that make up a possibly closed shape.
  *
  * @export
- * @class Polygon
+ * @memberOf NavMesh
  */
 export default class Polygon {
-  constructor(points, closed = true) {
+  /**
+   * Create a polygon.
+   * @param {PointLike[]} points - The points on the edges of the polygon.
+   * @param {boolean} closed - Should the first and last point be joined?
+   */
+  constructor(points, closed = true, id = 0) {
     this.isClosed = closed;
     this.points = points;
     this.edges = [];
@@ -21,6 +38,13 @@ export default class Polygon {
       this.edges.push(new Line(first.x, first.y, last.x, last.y));
     }
   }
+
+  /**
+   * Is the given point inside the polygon?
+   * @param x the x co-ordinate of the point
+   * @param y the y co-ordinate of the point
+   * @returns {boolean} true if the point is inside, false otherwise
+   */
   contains(x, y) {
     let inside = false;
     for (let i = -1, j = this.points.length - 1; ++i < this.points.length; j = i) {

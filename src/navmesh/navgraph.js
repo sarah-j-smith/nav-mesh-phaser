@@ -3,7 +3,7 @@ import { Graph } from './graph.js';
 /**
  * Graph for javascript-astar. It implements the functionality for astar. See GPS test from astar
  * repo for structure: https://github.com/bgrins/javascript-astar/blob/master/test/tests.js
- *
+ * @memberOf NavMesh
  * @class NavGraph
  * @private
  */

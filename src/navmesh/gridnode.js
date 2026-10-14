@@ -1,4 +1,10 @@
-export class GridNode {
+import { Astar } from './astar';
+
+/**
+ * @memberOf NavMesh
+ * @export
+ */
+export class GridNode extends PointLike {
   constructor(x, y, weight) {
     this.x = x;
     this.y = y;

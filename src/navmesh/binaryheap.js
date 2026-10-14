@@ -1,4 +1,19 @@
+// Includes Binary Heap (with modifications) from Marijn Haverbeke.
+// http://eloquentjavascript.net/appendix2.html
+/**
+ * memberOf NavMesh
+ */
 export class BinaryHeap {
+  /**
+   * @callback ScoreFunction
+   * @param {*} Element in the heap to score
+   * @results {number} Score
+   */
+
+  /**
+   * Create a new BinaryHeap
+   * @param {ScoreFunction} scoreFunction
+   */
   constructor(scoreFunction) {
     this.content = [];
     this.scoreFunction = scoreFunction;

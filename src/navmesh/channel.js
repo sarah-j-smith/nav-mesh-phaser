@@ -2,6 +2,7 @@
 // funnel algorithm so astar checks can be more accurate.
 import { triarea2 } from './utils.js';
 /**
+ * @memberOf NavMesh
  * @private
  */
 export default class Channel {
