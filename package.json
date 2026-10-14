@@ -19,6 +19,7 @@
   "main": "src/main.js",
   "scripts": {
     "test": "node --test",
+    "start:demo": "node src/navmesh-service.js",
     "start": "npx live-server"
   }
 }

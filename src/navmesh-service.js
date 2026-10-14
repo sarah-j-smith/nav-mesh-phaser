@@ -1,7 +1,7 @@
+import http from 'node:http';
+
 import NavMesh from './navmesh/navmesh.js';
 
-// The mesh is represented as an array where each element contains the points for an individual
-// polygon within the mesh.
 const meshPolygonPoints = [
   // Polygon 1
   [
@@ -26,26 +26,28 @@ const meshPolygonPoints = [
   ],
 ];
 
-const navMesh = new NavMesh(meshPolygonPoints);
+function makeNavMeshSVG() {
+  // The mesh is represented as an array where each element contains the points for an individual
+  // polygon within the mesh.
+  const navMesh = new NavMesh(meshPolygonPoints);
 
-// Construct an SVG representation of the mesh.
-const initX = meshPolygonPoints[0][0].x;
-const initY = meshPolygonPoints[0][0].y;
-const bounds = { left: initX, right: initX, top: initY, bottom: initY };
-meshPolygonPoints.forEach((polyPoints) => {
-  polyPoints.forEach((point) => {
-    if (point.x < bounds.left) bounds.left = point.x;
-    if (point.x > bounds.right) bounds.right = point.x;
-    if (point.y < bounds.top) bounds.top = point.y;
-    if (point.y > bounds.bottom) bounds.bottom = point.y;
+  // Construct an SVG representation of the mesh.
+  const initX = meshPolygonPoints[0][0].x;
+  const initY = meshPolygonPoints[0][0].y;
+  const bounds = { left: initX, right: initX, top: initY, bottom: initY };
+  meshPolygonPoints.forEach((polyPoints) => {
+    polyPoints.forEach((point) => {
+      if (point.x < bounds.left) bounds.left = point.x;
+      if (point.x > bounds.right) bounds.right = point.x;
+      if (point.y < bounds.top) bounds.top = point.y;
+      if (point.y > bounds.bottom) bounds.bottom = point.y;
+    });
   });
-});
-const navWidth = bounds.right - bounds.left;
-const navHeight = bounds.bottom - bounds.top;
-const svgScale = 10;
-const viewbox = `-10 -10 ${navWidth * svgScale + 20} ${navHeight * svgScale + 20}`;
+  const navWidth = bounds.right - bounds.left;
+  const navHeight = bounds.bottom - bounds.top;
+  const svgScale = 10;
+  const viewbox = `-10 -10 ${navWidth * svgScale + 20} ${navHeight * svgScale + 20}`;
 
-app.get('/', (req, res) => {
   // Find a path from the top left of room 1 to the bottom left of room 3
   const path = navMesh.findPath({ x: 0, y: 0 }, { x: 10, y: 20 });
   // ⮡  [{ x: 0, y: 0 }, { x: 10, y: 10 }, { x: 10, y: 20 }]
@@ -64,14 +66,19 @@ app.get('/', (req, res) => {
     svgPathString += path.map((p) => `L ${p.x * svgScale} ${p.y * svgScale}`).join(' ');
   }
   const svgPath = `<path d="${svgPathString}"/>`;
-  const svg = `<svg width="250" viewbox="${viewbox}">
-    ${svgPolys}
-    ${svgPath}
-  </svg>`;
 
-  res.send(
-    `
-    <html>
+  return {
+    svg: `<svg width="250" viewbox="${viewbox}">
+      ${svgPolys}
+      ${svgPath}
+    </svg>`,
+    formattedPath,
+  };
+}
+
+function content(formattedPath, svg) {
+  return `
+    <html lang="en">
       <head>
         <style>
           path {
@@ -96,10 +103,23 @@ app.get('/', (req, res) => {
         <ul>
           ${formattedPath}
         </ul>
-      <body>
-    <html>
-    `,
-  );
+      </body>
+    </html>
+    `;
+}
+
+const server = http.createServer((req, res) => {
+  try {
+    const { svg, formattedPath } = makeNavMeshSVG();
+    const output = content(svg, formattedPath);
+    res.end(output);
+  } catch (err) {
+    res.writeHead(500, { 'Content-Type': 'text/plain' });
+    res.end('Internal Server Error');
+  }
 });
 
-app.listen(port, () => console.log(`Node app listening on port ${port}!`));
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
