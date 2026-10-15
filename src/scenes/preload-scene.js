@@ -1,6 +1,6 @@
 import Phaser from '../lib/phaser.js';
 import { SCENE_KEYS } from '../common/scene-keys.js';
-import { IMAGE_ASSETS } from '../common/assets.js';
+import { ASSET_TYPES, GAME_ASSETS } from '../common/assets.js';
 
 export class PreloadScene extends Phaser.Scene {
   constructor() {
@@ -10,8 +10,13 @@ export class PreloadScene extends Phaser.Scene {
   }
 
   preload() {
-    IMAGE_ASSETS.forEach((asset) => {
-      this.load.image(asset.assetKey, asset.path);
+    GAME_ASSETS.forEach((asset) => {
+      if (asset.type === ASSET_TYPES.IMAGE) {
+        this.load.image(asset.assetKey, asset.path);
+      }
+      if (asset.type === ASSET_TYPES.MAP) {
+        this.load.tilemapTiledJSON(asset.assetKey, asset.path);
+      }
     });
   }
 
