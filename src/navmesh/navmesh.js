@@ -127,6 +127,7 @@ export default class NavMesh {
       }
       // End
       d = navPoly.centroid.distance(endVector);
+      console.log(`> d: ${d} - 4: ${r}`, navPoly.centroid);
       if (d <= endDistance && d <= r && navPoly.contains(endVector)) {
         endPoly = navPoly;
         endDistance = d;

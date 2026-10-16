@@ -1,0 +1,965 @@
+{
+	"textures": [
+		{
+			"image": "character.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 941,
+				"h": 37
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "RPGSoldier32x32-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 661,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 691,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 661,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 721,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 661,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 32,
+						"h": 34
+					},
+					"frame": {
+						"x": 461,
+						"y": 1,
+						"w": 32,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 30,
+						"h": 34
+					},
+					"frame": {
+						"x": 597,
+						"y": 1,
+						"w": 30,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 32,
+						"h": 34
+					},
+					"frame": {
+						"x": 495,
+						"y": 1,
+						"w": 32,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 35
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 32,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 2,
+						"w": 18,
+						"h": 33
+					},
+					"frame": {
+						"x": 862,
+						"y": 1,
+						"w": 18,
+						"h": 33
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 2,
+						"w": 18,
+						"h": 33
+					},
+					"frame": {
+						"x": 882,
+						"y": 1,
+						"w": 18,
+						"h": 33
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 2,
+						"w": 18,
+						"h": 33
+					},
+					"frame": {
+						"x": 862,
+						"y": 1,
+						"w": 18,
+						"h": 33
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 2,
+						"w": 18,
+						"h": 33
+					},
+					"frame": {
+						"x": 902,
+						"y": 1,
+						"w": 18,
+						"h": 33
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 2,
+						"w": 18,
+						"h": 33
+					},
+					"frame": {
+						"x": 862,
+						"y": 1,
+						"w": 18,
+						"h": 33
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 2,
+						"w": 18,
+						"h": 33
+					},
+					"frame": {
+						"x": 922,
+						"y": 1,
+						"w": 18,
+						"h": 33
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 2,
+						"w": 19,
+						"h": 33
+					},
+					"frame": {
+						"x": 841,
+						"y": 1,
+						"w": 19,
+						"h": 33
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 2,
+						"w": 19,
+						"h": 33
+					},
+					"frame": {
+						"x": 841,
+						"y": 1,
+						"w": 19,
+						"h": 33
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 19,
+						"h": 35
+					},
+					"frame": {
+						"x": 440,
+						"y": 1,
+						"w": 19,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 751,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 781,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 751,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 811,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					},
+					"frame": {
+						"x": 751,
+						"y": 1,
+						"w": 28,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 32,
+						"h": 34
+					},
+					"frame": {
+						"x": 529,
+						"y": 1,
+						"w": 32,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 30,
+						"h": 34
+					},
+					"frame": {
+						"x": 629,
+						"y": 1,
+						"w": 30,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 32,
+						"h": 34
+					},
+					"frame": {
+						"x": 563,
+						"y": 1,
+						"w": 32,
+						"h": 34
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-26.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 35
+					},
+					"frame": {
+						"x": 35,
+						"y": 1,
+						"w": 32,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 23,
+						"h": 35
+					},
+					"frame": {
+						"x": 345,
+						"y": 1,
+						"w": 23,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 26,
+						"h": 35
+					},
+					"frame": {
+						"x": 128,
+						"y": 1,
+						"w": 26,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 23,
+						"h": 35
+					},
+					"frame": {
+						"x": 345,
+						"y": 1,
+						"w": 23,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-30.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 21,
+						"h": 35
+					},
+					"frame": {
+						"x": 395,
+						"y": 1,
+						"w": 21,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-31.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 23,
+						"h": 35
+					},
+					"frame": {
+						"x": 345,
+						"y": 1,
+						"w": 23,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-32.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 28,
+						"h": 35
+					},
+					"frame": {
+						"x": 69,
+						"y": 1,
+						"w": 28,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-33.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 25,
+						"h": 35
+					},
+					"frame": {
+						"x": 240,
+						"y": 1,
+						"w": 25,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-34.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 26,
+						"h": 35
+					},
+					"frame": {
+						"x": 156,
+						"y": 1,
+						"w": 26,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-35.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 26,
+						"h": 35
+					},
+					"frame": {
+						"x": 184,
+						"y": 1,
+						"w": 26,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-36.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 23,
+						"h": 35
+					},
+					"frame": {
+						"x": 370,
+						"y": 1,
+						"w": 23,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-37.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 20,
+						"h": 35
+					},
+					"frame": {
+						"x": 418,
+						"y": 1,
+						"w": 20,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-38.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 23,
+						"h": 35
+					},
+					"frame": {
+						"x": 370,
+						"y": 1,
+						"w": 23,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-39.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 27,
+						"h": 35
+					},
+					"frame": {
+						"x": 99,
+						"y": 1,
+						"w": 27,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-40.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 23,
+						"h": 35
+					},
+					"frame": {
+						"x": 370,
+						"y": 1,
+						"w": 23,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-41.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 26,
+						"h": 35
+					},
+					"frame": {
+						"x": 212,
+						"y": 1,
+						"w": 26,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-42.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 24,
+						"h": 35
+					},
+					"frame": {
+						"x": 267,
+						"y": 1,
+						"w": 24,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-43.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 24,
+						"h": 35
+					},
+					"frame": {
+						"x": 293,
+						"y": 1,
+						"w": 24,
+						"h": 35
+					}
+				},
+				{
+					"filename": "RPGSoldier32x32-44.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 24,
+						"h": 35
+					},
+					"frame": {
+						"x": 319,
+						"y": 1,
+						"w": 24,
+						"h": 35
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:30c0315939117efb055be378cf97df3f:4b2deb7caa641de9fe186ce29cdd02c2:42e475aa4a03af306bdc7acb5ff91d19$"
+	}
+}

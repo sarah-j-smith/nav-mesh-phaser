@@ -17,6 +17,12 @@ export class PreloadScene extends Phaser.Scene {
       if (asset.type === ASSET_TYPES.MAP) {
         this.load.tilemapTiledJSON(asset.assetKey, asset.path);
       }
+      if (asset.type === ASSET_TYPES.ATLAS) {
+        this.load.atlas(asset.assetKey, asset.texture, asset.path);
+      }
+      if (asset.type === ASSET_TYPES.MULTI_ATLAS) {
+        this.load.multiatlas(asset.assetKey, asset.atlas, asset.path);
+      }
     });
   }
 

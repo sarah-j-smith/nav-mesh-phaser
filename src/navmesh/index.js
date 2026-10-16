@@ -5,6 +5,6 @@
  */
 import NavMesh from './navmesh.js';
 export { NavMesh };
-export * from './common-types';
-export * from './map-parsers';
+export * from './common-types.js';
+export * from './map-parsers/index.js';
 export default NavMesh;

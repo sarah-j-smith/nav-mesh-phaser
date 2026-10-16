@@ -1,4 +1,5 @@
 import { Astar } from './astar.js';
+import { GridNode } from './gridnode.js';
 
 /**
  * A graph memory structure

@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES6",                          /* Specify ECMAScript target version */
-    "module": "ES6",                          /* Specify module code generation */
+    "target": "ES6" /* Specify ECMAScript target version */,
+    "module": "ES6" /* Specify module code generation */,
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  }d
+  }
+}

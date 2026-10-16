@@ -1,15 +1,10 @@
 {
   "display": "Node 24",
   "compilerOptions": {
-    "checkJs": true,
-    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Error", "ESNext.Iterator", "ESNext.Promise"],
+    "lib": ["es2016", "dom", "es2017"],
     "module": "es6",
-    "target": "es2024",
-    "types": ["node"],
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node16"
+    "target": "es6",
+    "checkJs": true
   },
   "include": ["src/**/*"]
 }
