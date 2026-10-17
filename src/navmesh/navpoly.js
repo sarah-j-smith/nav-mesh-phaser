@@ -9,6 +9,8 @@ import Vector2 from './math/vector-2.js';
 export default class NavPoly {
   /**
    * Creates an instance of NavPoly.
+   * @param {number} id identifier number for this nav poly
+   * @param {NavMesh.Polygon} polygon data for this nav poly in form of a polygon
    */
   constructor(id, polygon) {
     // jsastar property:
@@ -31,6 +33,8 @@ export default class NavPoly {
   }
   /**
    * Check if the given point-like object is within the polygon.
+   * @param {{x: number, y: number}} point
+   * @returns boolean true if the point is in the polygon, or false otherwise
    */
   contains(point) {
     // Phaser's polygon check doesn't handle when a point is on one of the edges of the line. Note:

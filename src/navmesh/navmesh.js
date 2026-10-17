@@ -1,7 +1,7 @@
 import NavPoly from './navpoly.js';
 import NavGraph from './navgraph.js';
 import Channel from './channel.js';
-import { angleDifference, areCollinear, projectPointToEdge } from './utils.js';
+import { angleDifference, areCollinear, pointsStringify, projectPointToEdge } from './utils.js';
 import Vector2 from './math/vector-2.js';
 import Line from './math/line.js';
 import Polygon from './math/polygon.js';
@@ -38,6 +38,7 @@ export default class NavMesh {
   }
   /**
    * Get the NavPolys that are in this navmesh.
+   * @returns {NavPoly[]}
    */
   getPolygons() {
     return this.navPolygons;
@@ -52,7 +53,8 @@ export default class NavMesh {
   }
   /**
    * Find if the given point is within any of the polygons in the mesh.
-   * @param point
+   * @param {{x: number, y: number}} point
+   * @returns boolean true if the point is in any polygon in the mesh, and false otherwise
    */
   isPointInMesh(point) {
     return this.navPolygons.some((navPoly) => navPoly.contains(point));
@@ -127,7 +129,7 @@ export default class NavMesh {
       }
       // End
       d = navPoly.centroid.distance(endVector);
-      console.log(`> d: ${d} - 4: ${r}`, navPoly.centroid);
+      console.log(`> d: ${d} - 4: ${r}`, navPoly.toString(), pointsStringify(navPoly.getPoints()));
       if (d <= endDistance && d <= r && navPoly.contains(endVector)) {
         endPoly = navPoly;
         endDistance = d;

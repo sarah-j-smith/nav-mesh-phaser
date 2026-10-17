@@ -88,3 +88,13 @@ export function areCollinear(line1, line2, errorMargin = 0.0001) {
 export function isTruthy(input) {
   return Boolean(input);
 }
+
+/**
+ * Produce a descriptive string of a list of points
+ * @param {NavMesh.Vector2[]} points
+ */
+export function pointsStringify(points) {
+  return points.reduce((accum, curr) => {
+    `${accum}, (${curr.x}, ${curr.y})`;
+  }, '');
+}
