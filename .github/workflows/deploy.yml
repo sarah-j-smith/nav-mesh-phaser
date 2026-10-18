@@ -1,0 +1,39 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main  # Triggers the deployment on every push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js (Adjust version if necessary)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-index: '24'
+          cache: 'npm'
+
+      # Step 3: Install dependencies and build the project
+      - name: Install dependencies & Build
+        run: |
+          npm run build
+
+      # Step 4: Deploy the build folder to Netlify
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './dist' # Change to './build' or './public' depending on your framework
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+

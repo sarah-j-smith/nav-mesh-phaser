@@ -18,6 +18,7 @@
   "type": "module",
   "main": "src/main.js",
   "scripts": {
+    "build": "scripts/bundle.sh",
     "test": "node --test",
     "start:demo": "node src/navmesh-service.js",
     "start": "node src/server.js ."
