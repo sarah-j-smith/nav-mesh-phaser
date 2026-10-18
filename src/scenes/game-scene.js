@@ -19,7 +19,7 @@ export class GameScene extends Phaser.Scene {
   /** @type {Phaser.GameObjects.Text} */
   #text;
   /** @type {number} Speed of the player */
-  #speed = 10;
+  #speed = 30;
 
   /** @type {Phaser.Math.Vector2 | null} */
   #goal;
@@ -37,7 +37,7 @@ export class GameScene extends Phaser.Scene {
   update(time, delta) {
     if (this.#isGameOver) return;
     const position = new Phaser.Math.Vector2(this.#player.x, this.#player.y);
-    const margin = Math.trunc(Math.max(this.#player.displayWidth, this.#player.displayHeight) * 0.6);
+    const margin = Math.trunc(Math.max(this.#player.displayWidth, this.#player.displayHeight) * 0.1);
     if (this.#goal && position.distance(this.#goal) < margin) {
       this.#player.anims.stop();
       this.#text.setText('Arrived');
@@ -117,10 +117,12 @@ export class GameScene extends Phaser.Scene {
     //this.#player = this.add.follower(followPath, 0, 0, ASSET_KEYS.PLAYER, 0);
     this.#player.setPath(followPath);
     this.#player.setVisible(true);
-    /** @type {Phaser.Types.GameObjects.PathFollower.PathConfig | Phaser.Types.Tweens.NumberTweenBuilderConfig} */
-    const pathConfig = {};
+    const duration = ((100 * 1000) / Math.max(this.#speed, 1)) * path.length;
+    //  Phaser.Types.Tweens.NumberTweenBuilderConfig
+    /** @type {Phaser.Types.GameObjects.PathFollower.PathConfig} */
+    const pathConfig = { positionOnPath: true, duration };
     this.#player.anims.play('walk-front');
-    this.#player.startFollow(((100 * 1000) / Math.max(this.#speed, 1)) * path.length);
+    this.#player.startFollow(pathConfig);
   }
 
   setupPlayer() {
