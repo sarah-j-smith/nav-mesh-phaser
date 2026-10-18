@@ -5,7 +5,7 @@ import { angleDifference, areCollinear, pointsStringify, projectPointToEdge } fr
 import Vector2 from './math/vector-2.js';
 import Line from './math/line.js';
 import Polygon from './math/polygon.js';
-import { Astar } from './astar.js';
+import { Astar } from './javascript-astar/astar.js';
 
 /**
  * The `NavMesh` class is the workhorse that represents a navigation mesh built from a series of

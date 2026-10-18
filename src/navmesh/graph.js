@@ -1,4 +1,4 @@
-import { Astar } from './astar.js';
+import { Astar } from './javascript-astar/astar.js';
 import { GridNode } from './gridnode.js';
 
 /**

@@ -1,3 +1,5 @@
+/** Copyright 2026 - Sarah Smith - MIT License - see root license */
+
 import http from 'node:http';
 
 import NavMesh from './navmesh/navmesh.js';

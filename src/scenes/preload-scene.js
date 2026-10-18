@@ -1,3 +1,5 @@
+/** Copyright 2026 - Sarah Smith - MIT License - see root license */
+
 import Phaser from '../lib/phaser.js';
 import { SCENE_KEYS } from '../common/scene-keys.js';
 import { ASSET_TYPES, GAME_ASSETS } from '../common/assets.js';

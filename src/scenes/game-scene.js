@@ -1,3 +1,5 @@
+/** Copyright 2026 - Sarah Smith - MIT License - see root license */
+
 import Phaser from '../lib/phaser.js';
 import { SCENE_KEYS } from '../common/scene-keys.js';
 import { ASSET_KEYS, MAP_KEYS } from '../common/assets.js';
@@ -16,6 +18,8 @@ export class GameScene extends Phaser.Scene {
   #graphics;
   /** @type {Phaser.GameObjects.Text} */
   #text;
+  /** @type {number} Speed of the player */
+  #speed = 10;
 
   /** @type {Phaser.Math.Vector2 | null} */
   #goal;
@@ -113,9 +117,10 @@ export class GameScene extends Phaser.Scene {
     //this.#player = this.add.follower(followPath, 0, 0, ASSET_KEYS.PLAYER, 0);
     this.#player.setPath(followPath);
     this.#player.setVisible(true);
-
+    /** @type {Phaser.Types.GameObjects.PathFollower.PathConfig | Phaser.Types.Tweens.NumberTweenBuilderConfig} */
+    const pathConfig = {};
     this.#player.anims.play('walk-front');
-    this.#player.startFollow(10 * 1000);
+    this.#player.startFollow(((100 * 1000) / Math.max(this.#speed, 1)) * path.length);
   }
 
   setupPlayer() {
